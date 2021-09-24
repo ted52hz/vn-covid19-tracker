@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    data = requests.get("https://disease.sh/v2/countries/Vietnam",verify=False)
+    data = requests.get("https://disease.sh/v2/countries/Vietnam?yesterday=true",verify=False)
     data_dict = data.json()
     return render_template('home.html',data=data_dict)
 
